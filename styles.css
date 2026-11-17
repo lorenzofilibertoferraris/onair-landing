@@ -267,6 +267,13 @@ body.hide-todo .draft-banner { display: none; }
 s { text-decoration-thickness: 1.5px; }
 .hero-offer { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 18px; }
 .hero-cta { min-height: 54px; padding: 0 34px; }
+/* hero waitlist widget — on the dark video */
+.wl-hero { min-width: min(480px, 100%); }
+.wl-hero .wl-input { background: rgba(255,255,255,.94); border-color: transparent; min-width: 180px; }
+.wl-hero .wl-input:focus { border-color: var(--arancio); }
+.wl-hero .wl-input::placeholder { color: rgba(45,41,38,.5); }
+.wl-hero .wl-error { color: #FFB4A8; }
+.wl-hero .wl-ok { color: #fff; }
 .hero-price { font-size: 14px; color: rgba(255,255,255,.88); }
 .hero-price s { color: rgba(255,255,255,.6); }
 .hero-price strong { font-weight: 700; font-size: 1.5rem; letter-spacing: -.01em; color: #fff; margin-right: 4px; }

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261117b">
+  <link rel="stylesheet" href="styles.css?v=20261117c">
 </head>
 <body>
 
@@ -49,7 +49,19 @@
       <span class="hero-title-2">for your MacBook</span>
     </h1>
     <div class="hero-offer">
-      <a class="pill pill-cyan hero-cta" href="#waitlist">Join the waitlist →</a>
+      <!-- Same waitlist widget as the price card (wiring in main.js → ONAIR_CONFIG) -->
+      <div class="wl wl-hero" data-waitlist data-source="hero">
+        <form class="wl-form" novalidate>
+          <label class="sr-only" for="wl-email-hero">Email</label>
+          <input id="wl-email-hero" class="wl-input" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+          <button class="pill pill-cyan wl-submit" type="submit">Join the waitlist</button>
+        </form>
+        <p class="wl-error" role="alert" hidden></p>
+        <div class="wl-step2" hidden>
+          <p class="wl-ok"><i class="dot"></i>You're on the list.</p>
+          <a class="pill pill-cyan wl-pay" href="#" data-deposit-link>Pay the $20 deposit</a>
+        </div>
+      </div>
       <p class="hero-price"><s>$300</s> <strong>$199</strong> for waitlist members · $20 deposit</p>
     </div>
     <p class="hero-cap">onAir lives on your Mac, with its own dedicated 5G. Plug it in and you're online — global data plan included, or bring your own SIM.</p>
@@ -531,6 +543,6 @@
   <a class="pill pill-cyan" href="#waitlist" tabindex="-1">Reserve for $20</a>
 </div>
 
-<script src="main.js?v=20261117b"></script>
+<script src="main.js?v=20261117c"></script>
 </body>
 </html>
