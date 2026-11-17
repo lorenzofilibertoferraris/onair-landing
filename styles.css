@@ -10,12 +10,17 @@
 :root {
   --panna: #F5EEE1;
   --antracite: #2D2926;
-  /* Rolling Square brand: blue #1761FF (nav/secondary CTA), green #17E260
-     (buy CTA), both white text, radius 5px, Montserrat 700 uppercase. */
-  --azzurro: #1761FF;
-  --azzurro-text: #0E47C2;
-  --verde: #17E260;
-  --verde-hover: #0FC853;
+  /* Rolling Square base, onAir accent: the product's strap orange (#F87A1F,
+     sampled from the renders) is the single accent — buttons, highlights,
+     eyebrows. Secondary CTAs are quiet outlines. Premium: one color, used
+     sparingly on panna + antracite. */
+  --arancio: #F87A1F;
+  --arancio-hover: #E2690F;
+  --arancio-text: #C05A02;
+  --azzurro: var(--arancio);
+  --azzurro-text: var(--arancio-text);
+  --verde: var(--arancio);
+  --verde-hover: var(--arancio-hover);
   --grigio: #8B8680;
   --gutter: clamp(18px, 3vw, 56px);
   --serif: "Montserrat", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -47,7 +52,7 @@ body.hide-todo .draft-banner { display: none; }
 .display-m  { font-family: var(--serif); font-weight: 700; text-transform: uppercase; font-size: clamp(1.7rem, 4.8vw, 3.4rem); line-height: 1; letter-spacing: -.012em; }
 .display-s  { font-family: var(--serif); font-weight: 700; text-transform: uppercase; font-size: clamp(1.5rem, 2.5vw, 2.1rem); line-height: 1.1; }
 .narrow { max-width: 13ch; }
-.eyebrow { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .24em; color: rgba(45,41,38,.55); }
+.eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .24em; color: var(--arancio-text); }
 .eyebrow.light { color: rgba(255,255,255,.7); }
 .lede { margin-top: 20px; max-width: 26ch; font-family: var(--sans); font-weight: 500; font-size: clamp(1.2rem, 2.4vw, 1.8rem); line-height: 1.18; letter-spacing: -.01em; }
 .body { margin-top: 20px; max-width: 52ch; font-size: 14px; line-height: 1.72; letter-spacing: .005em; color: rgba(45,41,38,.75); }
@@ -58,12 +63,12 @@ body.hide-todo .draft-banner { display: none; }
 /* Rolling Square CTA style: 5px radius, Montserrat 700 uppercase, white text.
    Primary (buy) = green, secondary = blue, like main_cta / banner_cta on
    rollingsquare.com. */
-.pill { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 5px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease), filter .3s var(--ease); }
+.pill { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 30px; border-radius: 6px; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease); }
 .pill:hover { transform: translateY(-1px); }
-.pill-cyan  { background: var(--verde); color: #fff; }
-.pill-cyan:hover { background: var(--verde-hover); }
-.pill-ghost { background: var(--azzurro); color: #fff; }
-.pill-ghost:hover { filter: brightness(.88); }
+.pill-cyan  { background: var(--arancio); color: #1A1511; box-shadow: 0 1px 2px rgba(45,41,38,.15), 0 8px 24px rgba(248,122,31,.28); }
+.pill-cyan:hover { background: var(--arancio-hover); box-shadow: 0 1px 2px rgba(45,41,38,.2), 0 10px 28px rgba(248,122,31,.34); }
+.pill-ghost { background: transparent; color: var(--antracite); border: 1.5px solid rgba(45,41,38,.3); }
+.pill-ghost:hover { border-color: var(--antracite); background: rgba(45,41,38,.05); }
 .pill-white { background: #fff; color: var(--antracite); font-size: 11px; letter-spacing: .14em; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .cta-row.center { justify-content: center; margin-top: clamp(48px, 7vw, 88px); }
@@ -171,7 +176,7 @@ body.hide-todo .draft-banner { display: none; }
 .how { padding-block: clamp(96px, 14svh, 196px); }
 .how .display-m { margin-top: 16px; }
 .how-intro { max-width: 48ch; }
-.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 32px); margin-top: clamp(48px, 6vw, 80px); }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 32px); margin-top: clamp(48px, 6vw, 80px); }
 .steps li { position: relative; padding: 22px; border-radius: 22px; background: rgba(255,255,255,.5); }
 .step-num { font-family: var(--serif); font-size: 1.45rem; color: rgba(45,41,38,.2); }
 .step-media { margin: 18px 0 22px; aspect-ratio: 1; border-radius: 16px; overflow: hidden; background: #EDE4D3; display: grid; place-items: center; }
@@ -206,7 +211,7 @@ body.hide-todo .draft-banner { display: none; }
 .final-shade { position: absolute; inset: 0; background: rgba(20,18,16,.45); }
 .final-content { position: relative; display: grid; justify-items: center; gap: 24px; padding: 0 var(--gutter); }
 .final-title { font-family: var(--serif); font-weight: 700; text-transform: uppercase; font-size: clamp(2rem, 5.6vw, 4.6rem); line-height: 1; letter-spacing: -.015em; display: grid; }
-.final-title span:last-child { color: var(--verde); }
+.final-title span:last-child { color: var(--arancio); }
 .final-note { max-width: 42ch; font-size: clamp(.8rem, 1.5svh, .95rem); line-height: 1.55; color: rgba(255,255,255,.75); }
 
 /* ---------- footer ---------- */
