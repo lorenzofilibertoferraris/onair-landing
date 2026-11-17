@@ -334,6 +334,7 @@ s { text-decoration-thickness: 1.5px; }
 .dep-steps { list-style: none; margin-top: 28px; }
 .dep-steps li { display: grid; grid-template-columns: 44px 1fr; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(45,41,38,.1); }
 .dep-steps .num { font-family: var(--serif); font-size: 1.12rem; color: rgba(45,41,38,.3); }
+.dep-steps .num.emoji { font-size: 1.35rem; }
 .dep-t { font-weight: 600; font-size: 1.2rem; line-height: 1.2; letter-spacing: -.01em; }
 .dep-steps li p:not(.dep-t) { margin-top: 4px; font-size: 14px; line-height: 1.5; color: rgba(45,41,38,.68); }
 .waitlist-card { --pad: clamp(24px, 3vw, 40px); position: sticky; top: 96px; padding: var(--pad); border-radius: var(--r-card); background: #fff; box-shadow: 0 24px 60px rgba(45,41,38,.12); overflow: hidden; }
