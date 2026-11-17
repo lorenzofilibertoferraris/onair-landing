@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261117r">
+  <link rel="stylesheet" href="styles.css?v=20261117s">
 </head>
 <body>
 
@@ -107,9 +107,11 @@
         </div>
         <!-- Waitlist form (step 1: email · step 2: $20 deposit). Logic and endpoints in main.js → ONAIR_CONFIG -->
         <div class="wl" data-waitlist data-source="product-hero">
-          <form class="wl-form" novalidate>
+          <form class="wl-form stacked" novalidate>
             <label class="sr-only" for="wl-email-top">Email</label>
             <input id="wl-email-top" class="wl-input" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+            <label class="sr-only" for="wl-phone-top">Phone (optional)</label>
+            <input id="wl-phone-top" class="wl-input" type="tel" name="phone" placeholder="Phone — optional, for SMS updates" autocomplete="tel">
             <button class="pill pill-cyan wl-submit" type="submit">Join the waitlist</button>
           </form>
           <p class="wl-error" role="alert" hidden></p>
@@ -388,6 +390,8 @@
         <form class="wl-form stacked" novalidate>
           <label class="sr-only" for="wl-email-main">Email</label>
           <input id="wl-email-main" class="wl-input" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+            <label class="sr-only" for="wl-phone-main">Phone (optional)</label>
+            <input id="wl-phone-main" class="wl-input" type="tel" name="phone" placeholder="Phone — optional, for SMS updates" autocomplete="tel">
           <button class="pill pill-cyan wl-submit" type="submit">Join the waitlist</button>
         </form>
         <p class="wl-error" role="alert" hidden></p>
@@ -407,7 +411,7 @@
         <li>Deposit counts toward the price</li>
         <li>Fully refundable until launch</li>
       </ul>
-      <p class="wl-legal">By joining you agree to receive emails from Rolling Square about onAir. Unsubscribe anytime. <a class="text-link" href="#" data-todo-link>Privacy</a></p>
+      <p class="wl-legal">By joining you agree to receive emails — and SMS if you add your number — from Rolling Square about onAir. Unsubscribe anytime. <a class="text-link" href="#" data-todo-link>Privacy</a></p>
     </div>
   </div>
   <p class="wrap wl-foot">Prices in USD. Shipping and taxes calculated at launch. Launch date to be confirmed.</p>
@@ -545,6 +549,6 @@
   <a class="pill pill-cyan" href="#waitlist" tabindex="-1">Reserve for $20</a>
 </div>
 
-<script src="main.js?v=20261117r"></script>
+<script src="main.js?v=20261117s"></script>
 </body>
 </html>

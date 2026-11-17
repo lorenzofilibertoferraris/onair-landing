@@ -82,17 +82,25 @@ const ONAIR_CONFIG = {
     if (email && /stripe\.com/.test(u.hostname)) u.searchParams.set('prefilled_email', email);
     return u.toString();
   };
-  const subscribe = async (email, source) => {
-    if (draftMode) { console.info('[onAir waitlist] DRAFT mode, not sent:', email, source); return; }
-    const res = await fetch(`https://a.klaviyo.com/client/subscriptions?company_id=${ONAIR_CONFIG.klaviyoPublicKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/vnd.api+json', revision: '2024-10-15' },
-      body: JSON.stringify({ data: { type: 'subscription', attributes: {
-        custom_source: `onAir 5G waitlist · ${source}`,
-        profile: { data: { type: 'profile', attributes: { email, properties: { onair_waitlist: true, onair_waitlist_source: source } } } },
-      }, relationships: { list: { data: { type: 'list', id: ONAIR_CONFIG.klaviyoListId } } } } }),
-    });
-    if (!res.ok) throw new Error('Subscription failed: ' + res.status);
+  const subscribe = async (email, source, phone) => {
+    if (draftMode) { console.info('[onAir waitlist] DRAFT mode, not sent:', email, source, phone); return; }
+    const send = async (withPhone) => {
+      const attrs = { email, properties: { onair_waitlist: true, onair_waitlist_source: source } };
+      const subs = { email: { marketing: { consent: 'SUBSCRIBED' } } };
+      if (withPhone && phone) { attrs.phone_number = phone; subs.sms = { marketing: { consent: 'SUBSCRIBED' } }; }
+      attrs.subscriptions = subs;
+      const res = await fetch(`https://a.klaviyo.com/client/subscriptions?company_id=${ONAIR_CONFIG.klaviyoPublicKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/vnd.api+json', revision: '2024-10-15' },
+        body: JSON.stringify({ data: { type: 'subscription', attributes: {
+          custom_source: `onAir 5G waitlist · ${source}`,
+          profile: { data: { type: 'profile', attributes: attrs } },
+        }, relationships: { list: { data: { type: 'list', id: ONAIR_CONFIG.klaviyoListId } } } } }),
+      });
+      if (!res.ok) throw new Error('Subscription failed: ' + res.status);
+    };
+    try { await send(true); }
+    catch (e) { if (phone) await send(false); else throw e; }
   };
   const showStep2 = (wl, email) => {
     wl.querySelector('.wl-form').hidden = true;
@@ -114,9 +122,11 @@ const ONAIR_CONFIG = {
       const email = form.email.value.trim();
       err.hidden = true;
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Please enter a valid email address.'; err.hidden = false; return; }
+      let phone = form.phone ? form.phone.value.replace(/[\s().-]/g, '') : '';
+      if (phone && !/^\+[0-9]{7,15}$/.test(phone)) { err.textContent = 'Phone must be in international format, e.g. +1 555 000 1111 — or leave it empty.'; err.hidden = false; return; }
       btn.disabled = true; btn.textContent = 'Joining…';
       try {
-        await subscribe(email, wl.dataset.source);
+        await subscribe(email, wl.dataset.source, phone || undefined);
         localStorage.setItem('onair_wl_email', email);
         widgets.forEach(w => showStep2(w, email));
         if (window.fbq) fbq('track', 'Lead');
