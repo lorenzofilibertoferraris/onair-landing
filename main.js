@@ -10,8 +10,8 @@ const ONAIR_CONFIG = {
   // $20 deposit checkout (Stripe Payment Link or Shopify deposit product URL).
   // Leave empty while it does not exist: the button is shown as a placeholder.
   // For Stripe Payment Links the email is prefilled via ?prefilled_email=.
-  depositUrl: '',
-  // Set the Payment Link "after payment" redirect to <page URL>?deposit=success
+  // Live Stripe Payment Link (product prod_Ve6As7PC0uOGbP, $20, redirect → ?deposit=success)
+  depositUrl: 'https://buy.stripe.com/3cI8wP46F4Lw4973oH0kE0u',
 };
 
 // onAir 5G landing: small, dependency-free interactions.
