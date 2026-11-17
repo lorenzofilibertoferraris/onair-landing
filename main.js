@@ -179,3 +179,26 @@ document.querySelectorAll('[data-sim-mock]').forEach((m) => {
     o.hidden = b.dataset.sim !== 'own';
   }));
 });
+
+// Final CTA: rotating headline
+(() => {
+  const rt = document.querySelector('[data-rotate-title]');
+  if (!rt || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const sets = [
+    ['Your MacBook', 'always online.'],
+    ['Your agents', 'always working.'],
+    ['Your tasks', 'always running.'],
+  ];
+  const a = rt.querySelector('[data-r1]');
+  const b = rt.querySelector('[data-r2]');
+  let i = 0;
+  setInterval(() => {
+    rt.classList.add('is-swap');
+    setTimeout(() => {
+      i = (i + 1) % sets.length;
+      a.textContent = sets[i][0];
+      b.textContent = sets[i][1];
+      rt.classList.remove('is-swap');
+    }, 460);
+  }, 3200);
+})();

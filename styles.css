@@ -258,6 +258,8 @@ body.hide-todo .draft-banner { display: none; }
 .final-content { position: relative; display: grid; justify-items: center; gap: 24px; padding: 0 var(--gutter); }
 .final-title { font-family: var(--serif); font-weight: 700; text-transform: uppercase; font-size: clamp(2rem, 5.6vw, 4.6rem); line-height: 1; letter-spacing: -.015em; display: grid; }
 .final-title span:last-child { color: var(--arancio); }
+.final-title span { transition: opacity .45s var(--ease), transform .45s var(--ease); }
+.final-title.is-swap span { opacity: 0; transform: translateY(14px); }
 .final-note { max-width: 42ch; font-size: clamp(.8rem, 1.5svh, .95rem); line-height: 1.55; color: rgba(255,255,255,.75); }
 
 /* ---------- footer ---------- */

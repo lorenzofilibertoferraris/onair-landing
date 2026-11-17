@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261117d">
+  <link rel="stylesheet" href="styles.css?v=20261117e">
 </head>
 <body>
 
@@ -496,7 +496,11 @@
   <div class="final-shade"></div>
   <div class="final-content">
     <p class="eyebrow light">Waitlist</p>
-    <h2 class="final-title"><span>Be online</span><span>the moment you land.</span></h2>
+    <!-- Rotating headline (main.js). "Be online the moment you land." is
+         reserved for travel-context ads. -->
+    <h2 class="final-title" data-rotate-title>
+      <span data-r1>Your MacBook</span><span data-r2>always online.</span>
+    </h2>
     <p class="final-price"><s>$300</s> <strong>$199</strong> with the waitlist</p>
     <a class="pill pill-white" href="#waitlist">Reserve with a $20 deposit</a>
     <p class="final-note">Global data included · No subscription · Pay as you go — or your own SIM/eSIM. <span class="todo">*Coverage footnote to be finalised.</span></p>
@@ -543,6 +547,6 @@
   <a class="pill pill-cyan" href="#waitlist" tabindex="-1">Reserve for $20</a>
 </div>
 
-<script src="main.js?v=20261117d"></script>
+<script src="main.js?v=20261117e"></script>
 </body>
 </html>
