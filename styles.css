@@ -178,9 +178,11 @@ body.hide-todo .draft-banner { display: none; }
 .compare-table tbody td.c-onair { color: var(--antracite); font-weight: 600; }
 .compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom-color: transparent; }
 /* semantic markers: ✓ good · ✕ bad · – neutral (separate from the accent) */
+.compare-table td.y, .compare-table td.n, .compare-table td.m { position: relative; padding-left: 48px; }
 .compare-table td.y::before, .compare-table td.n::before, .compare-table td.m::before {
-  display: inline-grid; place-items: center; width: 19px; height: 19px; margin-right: 10px;
-  border-radius: 50%; font-size: 11px; font-weight: 700; vertical-align: -4px; line-height: 1;
+  position: absolute; left: 18px; top: 15px;
+  display: grid; place-items: center; width: 19px; height: 19px;
+  border-radius: 50%; font-size: 11px; font-weight: 700; line-height: 1;
 }
 .compare-table td.y::before { content: "✓"; background: rgba(46,158,91,.16); color: #1F7A43; }
 .compare-table td.n::before { content: "✕"; background: rgba(196,71,58,.13); color: #B3402F; }
