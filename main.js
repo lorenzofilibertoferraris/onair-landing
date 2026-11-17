@@ -85,10 +85,10 @@ const ONAIR_CONFIG = {
   const subscribe = async (email, source, phone) => {
     if (draftMode) { console.info('[onAir waitlist] DRAFT mode, not sent:', email, source, phone); return; }
     const send = async (withPhone) => {
+      // client/subscriptions grants marketing consent for the identifiers
+      // provided (email always; SMS when phone_number is included).
       const attrs = { email, properties: { onair_waitlist: true, onair_waitlist_source: source } };
-      const subs = { email: { marketing: { consent: 'SUBSCRIBED' } } };
-      if (withPhone && phone) { attrs.phone_number = phone; subs.sms = { marketing: { consent: 'SUBSCRIBED' } }; }
-      attrs.subscriptions = subs;
+      if (withPhone && phone) { attrs.phone_number = phone; }
       const res = await fetch(`https://a.klaviyo.com/client/subscriptions?company_id=${ONAIR_CONFIG.klaviyoPublicKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/vnd.api+json', revision: '2024-10-15' },
