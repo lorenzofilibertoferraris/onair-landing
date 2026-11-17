@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261117e">
+  <link rel="stylesheet" href="styles.css?v=20261117f">
 </head>
 <body>
 
@@ -51,6 +51,8 @@
     <div class="hero-offer">
       <!-- Same waitlist widget as the price card (wiring in main.js → ONAIR_CONFIG) -->
       <div class="wl wl-hero" data-waitlist data-source="hero">
+        <!-- Mobile: the email field appears after this tap (main.js) -->
+        <button class="pill pill-cyan wl-reveal" type="button">Join the waitlist</button>
         <form class="wl-form" novalidate>
           <label class="sr-only" for="wl-email-hero">Email</label>
           <input id="wl-email-hero" class="wl-input" type="email" name="email" placeholder="Your email" autocomplete="email" required>
@@ -68,6 +70,9 @@
   </div>
   <a class="hero-scroll" href="#product" aria-label="Scroll to product">↓</a>
 </section>
+
+<!-- Mobile only: hero caption moves below the video so the 5G icon stays visible -->
+<p class="hero-cap-under bg-panna">onAir lives on your Mac, with its own dedicated 5G. Plug it in and you're online — global data plan included, or bring your own SIM.</p>
 
 <!-- ============ 2. PRODUCT HERO (gallery + intro + points + first access) ============ -->
 <section class="product-hero bg-panna" id="product">
@@ -138,7 +143,7 @@
     <p class="idea-copy">That's a 5G icon, on a MacBook, like it always belonged there. A dedicated mobile connection, the kind your phone takes for granted.</p>
   </div>
   <figure class="wide-figure">
-    <img src="assets/img/wide219-9.jpg" alt="onAir 5G attached to a closed MacBook" loading="lazy">
+    <img src="assets/img/idea-5g.jpg" alt="MacBook menu bar showing the 5G icon next to battery and clock" loading="lazy">
   </figure>
 </section>
 
@@ -206,14 +211,19 @@
       <p class="body">The 5G icon sits in your menu bar. One click shows signal, speed, data left and SIM, and lets you top up. Every number on screen comes from a real measurement.</p>
       <ul class="icon-list">
         <li><img src="assets/icons/wifi.png" alt=""><span>Live signal and speed</span></li>
-        <li><img src="assets/icons/sim.png" alt=""><span>eSIM or physical SIM</span></li>
+        <li><img src="assets/icons/sim.png" alt=""><span>Our Global plan or your own eSIM</span></li>
         <li><img src="assets/icons/clock.png" alt=""><span>Keep Awake with the lid closed</span></li>
         <li><img src="assets/icons/refresh.png" alt=""><span>Reconnects by itself after sleep</span></li>
+        <li><img src="assets/icons/globe.png" alt=""><span>Share its connection with your phone</span></li>
+        <li><img src="assets/icons/shield.png" alt=""><span>Private, single-user network</span></li>
       </ul>
     </div>
     <figure class="split-media">
       <!-- TODO: replace with a final screenshot of the shipping app (current one is a prototype mock) -->
-      <img src="assets/img/app-panel.png" alt="onAir menu bar app showing a 5G connection, speed and data left" loading="lazy">
+      <!-- Real app recording: menu bar → panel → Keep Awake on → close -->
+      <video class="split-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/app-panel.png" aria-label="onAir menu bar app: opening the panel and turning on Keep Awake">
+        <source src="assets/video/macos-panel.mp4" type="video/mp4">
+      </video>
     </figure>
   </div>
 </section>
@@ -463,23 +473,27 @@
         <p>Yes, with Keep Awake turned on in the app. Your agents, syncs and uploads keep running.</p>
       </details>
       <details>
-        <summary><span class="faq-num">08</span><span class="faq-q">Which computers does it work with?</span></summary>
+        <summary><span class="faq-num">08</span><span class="faq-q">Can I share the connection with my phone?</span></summary>
+        <p>Yes. macOS has Internet Sharing built in: your Mac can rebroadcast its onAir connection over Wi-Fi to your phone, tablet or a friend's laptop. One onAir, every device you carry.</p>
+      </details>
+      <details>
+        <summary><span class="faq-num">09</span><span class="faq-q">Which computers does it work with?</span></summary>
         <p><span class="todo">To be confirmed: supported MacBook models, macOS versions, and whether Windows and iPad are supported.</span></p>
       </details>
       <details>
-        <summary><span class="faq-num">09</span><span class="faq-q">How much does it cost?</span></summary>
+        <summary><span class="faq-num">10</span><span class="faq-q">How much does it cost?</span></summary>
         <p>onAir 5G will retail for $300. Waitlist members who place a $20 deposit get it for $199.</p>
       </details>
       <details>
-        <summary><span class="faq-num">10</span><span class="faq-q">How does the $20 deposit work?</span></summary>
+        <summary><span class="faq-num">11</span><span class="faq-q">How does the $20 deposit work?</span></summary>
         <p>You pay $20 today to lock in the $199 waitlist price. The deposit counts toward the price, so at launch you pay the remaining $179. We'll email you when it's time.</p>
       </details>
       <details>
-        <summary><span class="faq-num">11</span><span class="faq-q">Can I get my deposit back?</span></summary>
+        <summary><span class="faq-num">12</span><span class="faq-q">Can I get my deposit back?</span></summary>
         <p><span class="todo">Yes. The deposit is fully refundable until launch: just write to us. (Refund policy to be confirmed.)</span></p>
       </details>
       <details>
-        <summary><span class="faq-num">12</span><span class="faq-q">When can I get one?</span></summary>
+        <summary><span class="faq-num">13</span><span class="faq-q">When can I get one?</span></summary>
         <p><span class="todo">Launch date and shipping window to be confirmed.</span> Waitlist members hear first.</p>
       </details>
     </div>
@@ -547,6 +561,6 @@
   <a class="pill pill-cyan" href="#waitlist" tabindex="-1">Reserve for $20</a>
 </div>
 
-<script src="main.js?v=20261117e"></script>
+<script src="main.js?v=20261117f"></script>
 </body>
 </html>

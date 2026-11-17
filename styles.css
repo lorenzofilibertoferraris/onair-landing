@@ -158,6 +158,7 @@ body.hide-todo .draft-banner { display: none; }
 .icon-list img { width: 44px; height: 44px; border-radius: 11px; background: #fff; padding: 9px; object-fit: contain; }
 .split-media { display: grid; place-items: center; }
 .split-media img { max-height: 560px; width: auto; border-radius: 18px; box-shadow: 0 24px 60px rgba(45,41,38,.16); }
+.split-video { width: 100%; max-width: 680px; border-radius: var(--r-card); box-shadow: 0 24px 60px rgba(45,41,38,.18); }
 
 /* ---------- 5b. compare ---------- */
 .compare { padding-block: 0 clamp(96px, 14svh, 180px); }
@@ -285,6 +286,8 @@ s { text-decoration-thickness: 1.5px; }
 .wl-hero .wl-input::placeholder { color: rgba(45,41,38,.5); }
 .wl-hero .wl-error { color: #FFB4A8; }
 .wl-hero .wl-ok { color: #fff; }
+.wl-reveal { display: none; }
+.hero-cap-under { display: none; }
 .hero-price { font-size: 14px; color: rgba(255,255,255,.88); }
 .hero-price s { color: rgba(255,255,255,.6); }
 .hero-price strong { font-weight: 700; font-size: 1.5rem; letter-spacing: -.01em; color: #fff; margin-right: 4px; }
@@ -365,6 +368,11 @@ body:has(.offer-bar.is-on) .draft-banner { bottom: 80px; }
 }
 @media (max-width: 640px) {
   .nav-links { display: none; }
+  /* Hero: keep the video clean — caption moves below, email appears on tap */
+  .hero .hero-cap { display: none; }
+  .hero-cap-under { display: block; padding: 18px var(--gutter) 0; font-size: 14px; line-height: 1.6; color: rgba(45,41,38,.7); }
+  .wl-hero.is-collapsed .wl-form, .wl-hero.is-collapsed .wl-error { display: none; }
+  .wl-hero.is-collapsed .wl-reveal { display: inline-flex; width: 100%; min-height: 54px; }
   .steps, .icon-list { grid-template-columns: 1fr; }
   .access-card { flex-direction: column; align-items: start; }
   .access-right { text-align: left; }

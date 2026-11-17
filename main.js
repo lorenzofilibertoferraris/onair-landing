@@ -202,3 +202,20 @@ document.querySelectorAll('[data-sim-mock]').forEach((m) => {
     }, 460);
   }, 3200);
 })();
+
+// Mobile hero: show the email field only after tapping the CTA
+(() => {
+  const wl = document.querySelector('.wl-hero');
+  const reveal = wl && wl.querySelector('.wl-reveal');
+  if (!reveal) return;
+  let saved = null;
+  try { saved = localStorage.getItem('onair_wl_email'); } catch (e) {}
+  if (matchMedia('(max-width: 640px)').matches && !saved) {
+    wl.classList.add('is-collapsed');
+  }
+  reveal.addEventListener('click', () => {
+    wl.classList.remove('is-collapsed');
+    const inp = wl.querySelector('.wl-input');
+    if (inp) inp.focus();
+  });
+})();
