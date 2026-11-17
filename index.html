@@ -37,22 +37,11 @@
 
 <!-- ============ 1. HERO VIDEO (full width) ============ -->
 <section class="hero" id="top">
-  <!-- HERO VIDEO SLOT: the final video is supplied by Nicola. Do not generate or source one.
-       When the file arrives: save it as assets/video/hero.mp4 (optional 9:16 cut: hero-mobile.mp4),
-       delete the <div class="hero-video-slot"> below and uncomment the <video> block. -->
-  <div class="hero-video hero-video-slot" role="img" aria-label="Hero video placeholder">
-    <div class="hero-video-slot-label">
-      <strong>HERO VIDEO</strong>
-      <span>Placeholder · final file coming from Nicola</span>
-      <span>16:9 desktop · 9:16 mobile · muted loop</span>
-    </div>
-  </div>
-  <!--
-  <video class="hero-video" autoplay muted loop playsinline preload="auto">
-    <source src="assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 700px)">
+  <!-- Hero: Airport_1 from Dropbox 63. ONAIR 5G/04. Media/Video AI (16:9 only;
+       add a 9:16 hero-mobile.mp4 <source> when one exists). -->
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/hero-poster.jpg">
     <source src="assets/video/hero.mp4" type="video/mp4">
   </video>
-  -->
   <div class="hero-shade"></div>
   <div class="hero-content">
     <h1 class="hero-title">
@@ -73,15 +62,15 @@
   <div class="wrap product-grid">
     <div class="gallery" data-gallery>
       <div class="gallery-main">
-        <img src="assets/img/render-final.jpg" alt="onAir 5G sitting flush beside a space black MacBook" data-gallery-main>
+        <img src="assets/img/still-4.jpg" alt="onAir 5G hooked on the side of an open MacBook" data-gallery-main>
         <span class="gallery-index" data-gallery-index>01</span>
       </div>
       <div class="gallery-thumbs">
-        <button class="is-active" data-src="assets/img/render-final.jpg" data-alt="onAir 5G beside a MacBook"><img src="assets/img/render-final.jpg" alt=""></button>
-        <button data-src="assets/img/render-open-1.jpg" data-alt="onAir 5G, three-quarter view"><img src="assets/img/render-open-1.jpg" alt=""></button>
-        <button data-src="assets/img/render-sidebar-1.jpg" data-alt="onAir 5G, side bar profile"><img src="assets/img/render-sidebar-1.jpg" alt=""></button>
-        <button data-src="assets/img/render-black-2.jpg" data-alt="onAir 5G with the lid closed"><img src="assets/img/render-black-2.jpg" alt=""></button>
-        <button data-src="assets/img/render-kb-2.jpg" data-alt="onAir 5G next to the keyboard"><img src="assets/img/render-kb-2.jpg" alt=""></button>
+        <button class="is-active" data-src="assets/img/still-4.jpg" data-alt="onAir 5G hooked on an open MacBook"><img src="assets/img/still-4.jpg" alt=""></button>
+        <button data-src="assets/img/still-1.jpg" data-alt="onAir 5G, close-up on the hook"><img src="assets/img/still-1.jpg" alt=""></button>
+        <button data-src="assets/img/still-2.jpg" data-alt="onAir 5G on the lid, side profile"><img src="assets/img/still-2.jpg" alt=""></button>
+        <button data-src="assets/img/still-6.jpg" data-alt="onAir 5G with its Rolling Square strap"><img src="assets/img/still-6.jpg" alt=""></button>
+        <button data-src="assets/img/still-9.jpg" data-alt="onAir 5G on a closed MacBook"><img src="assets/img/still-9.jpg" alt=""></button>
       </div>
     </div>
 
@@ -137,7 +126,7 @@
     <p class="idea-copy">That's a 5G icon, on a MacBook, like it always belonged there. A dedicated mobile connection, the kind your phone takes for granted.</p>
   </div>
   <figure class="wide-figure">
-    <img src="assets/img/render-black-1.jpg" alt="onAir 5G attached to a closed MacBook on a desk" loading="lazy">
+    <img src="assets/img/still-9.jpg" alt="onAir 5G attached to a closed MacBook" loading="lazy">
   </figure>
 </section>
 
@@ -154,7 +143,7 @@
         <p class="feature-copy">New country? Open your Mac and you're already online. No SIM kiosk, no roaming pass, no hotel password card.</p>
         <figure class="feature-media">
           <!-- TODO: replace with airport/hotel lifestyle photo from the OA-V02 shoot -->
-          <img src="assets/img/render-open-2.jpg" alt="onAir 5G on a MacBook" loading="lazy">
+          <img src="assets/img/still-3.jpg" alt="onAir 5G hooked beside the keyboard" loading="lazy">
           <div class="chip-card">
             <span class="chip-label">onAir 5G</span>
             <span class="chip-value"><i class="dot"></i>Connected</span>
@@ -169,7 +158,7 @@
         <p class="feature-copy">Close the lid and the agent keeps working on your Mac's own 5G. Long tasks, syncs and big uploads run while you get on with your day.</p>
         <figure class="feature-media">
           <!-- TODO: replace with "lid closed, agent running" shot from OA-V03 -->
-          <img src="assets/img/render-black-2.jpg" alt="MacBook with lid closed and onAir 5G attached" loading="lazy">
+          <img src="assets/img/still-5.jpg" alt="MacBook with lid closed and onAir 5G attached" loading="lazy">
           <div class="chip-card">
             <span class="chip-label">Keep Awake</span>
             <span class="chip-value">Lid closed · On</span>
@@ -184,7 +173,7 @@
         <p class="feature-copy">Airport, hotel and café Wi-Fi are shared with strangers. onAir gives your MacBook its own private connection: one network, one user.</p>
         <figure class="feature-media">
           <!-- TODO: replace with café / trade-fair shot from OA-V04 -->
-          <img src="assets/img/render-flat-2.jpg" alt="onAir 5G on a desk" loading="lazy">
+          <img src="assets/img/still-6.jpg" alt="onAir 5G and its strap on a desk" loading="lazy">
           <div class="chip-card">
             <span class="chip-label">Network</span>
             <span class="chip-value">Only yours</span>
@@ -227,10 +216,10 @@
 
     <div class="specs-grid" data-specs>
       <figure class="specs-media">
-        <img src="assets/img/render-sidebar-2.jpg" alt="" data-specs-img>
+        <img src="assets/img/still-2.jpg" alt="" data-specs-img>
       </figure>
       <ol class="specs-list">
-        <li class="is-active" data-img="assets/img/render-sidebar-2.jpg">
+        <li class="is-active" data-img="assets/img/still-2.jpg">
           <button type="button">
             <span class="spec-num">01</span>
             <span class="spec-title">Made to fit</span>
@@ -240,7 +229,7 @@
             <p>An aluminium side bar that sits flush with your MacBook, in <span class="todo">space black / colours TBC</span>. It looks like one object.</p>
           </div>
         </li>
-        <li data-img="assets/img/render-open-1.jpg">
+        <li data-img="assets/img/still-7.jpg">
           <button type="button">
             <span class="spec-num">02</span>
             <span class="spec-title">5G, worldwide</span>
@@ -250,7 +239,7 @@
             <p>5G with 4G fallback. Coverage in <span class="todo">150+ countries*</span>, with starter data <span class="todo">(amount TBC)</span> active from the first plug.</p>
           </div>
         </li>
-        <li data-img="assets/img/render-kb-1.jpg">
+        <li data-img="assets/img/still-10.jpg">
           <button type="button">
             <span class="spec-num">03</span>
             <span class="spec-title">Any SIM</span>
@@ -260,7 +249,7 @@
             <p>Use the included eSIM, add your own, or drop in a local nano-SIM when you're staying longer.</p>
           </div>
         </li>
-        <li data-img="assets/img/render-final.jpg">
+        <li data-img="assets/img/still-4.jpg">
           <button type="button">
             <span class="spec-num">04</span>
             <span class="spec-title">Plug and go</span>
@@ -285,7 +274,7 @@
     <ol class="steps">
       <li>
         <span class="step-num">01</span>
-        <div class="step-media"><img src="assets/img/render-open-1.jpg" alt="" loading="lazy"></div>
+        <div class="step-media"><img src="assets/img/still-1.jpg" alt="" loading="lazy"></div>
         <h3>Plug in</h3>
         <p class="step-sub">USB-C, no drivers</p>
       </li>
@@ -380,8 +369,9 @@
 
 <!-- ============ 8. FULL PAGE FILM ============ -->
 <section class="film">
-  <!-- TODO: second film slot (e.g. OA-V02 travel cut). Shows the still render until the real file exists; then add <source src="assets/video/...mp4" type="video/mp4">. -->
-  <video class="film-video" muted loop playsinline preload="none" poster="assets/img/render-kb-2.jpg" data-autoplay-on-view>
+  <!-- Train_1 from Dropbox 63. ONAIR 5G/04. Media/Video AI -->
+  <video class="film-video" muted loop playsinline preload="none" poster="assets/img/film-poster.jpg" data-autoplay-on-view>
+    <source src="assets/video/film-travel.mp4" type="video/mp4">
   </video>
 </section>
 
@@ -445,8 +435,9 @@
 
 <!-- ============ 10. FINAL CTA BAND (video background) ============ -->
 <section class="final-cta">
-  <!-- TODO: background video for the CTA band. Shows the still render until the real file exists. -->
-  <video class="final-video" muted loop playsinline preload="none" poster="assets/img/render-black-2.jpg" data-autoplay-on-view>
+  <!-- Walk_2 from Dropbox 63. ONAIR 5G/04. Media/Video AI -->
+  <video class="final-video" muted loop playsinline preload="none" poster="assets/img/final-poster.jpg" data-autoplay-on-view>
+    <source src="assets/video/final-cta.mp4" type="video/mp4">
   </video>
   <div class="final-shade"></div>
   <div class="final-content">
