@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261117b">
 </head>
 <body>
 
@@ -317,7 +317,24 @@
       </li>
       <li>
         <span class="step-num">03</span>
-        <div class="step-media icon"><img src="assets/icons/bolt.png" alt=""></div>
+        <div class="step-media mock">
+          <!-- Interactive mini-mock of the app's data-source toggle -->
+          <div class="sim-mock" data-sim-mock>
+            <div class="sim-seg" role="tablist" aria-label="Data source">
+              <button class="is-active" type="button" data-sim="global">onAir Global</button>
+              <button type="button" data-sim="own">Your eSIM</button>
+            </div>
+            <div class="sim-body sim-global">
+              <p class="sim-amount">2.9 GB <span>left of 3 GB</span></p>
+              <div class="sim-bar"><i style="width:82%"></i></div>
+              <span class="sim-topup">Top up…</span>
+            </div>
+            <div class="sim-body sim-own" hidden>
+              <p class="sim-own-title">Any carrier works</p>
+              <p class="sim-own-sub">Install any eSIM — or drop in a local SIM. No lock-in.</p>
+            </div>
+          </div>
+        </div>
         <h3>Your data, your way</h3>
         <p class="step-sub">pay as you go — or your own SIM/eSIM</p>
       </li>
@@ -514,6 +531,6 @@
   <a class="pill pill-cyan" href="#waitlist" tabindex="-1">Reserve for $20</a>
 </div>
 
-<script src="main.js"></script>
+<script src="main.js?v=20261117b"></script>
 </body>
 </html>

@@ -167,3 +167,15 @@ const ONAIR_CONFIG = {
     }
   });
 })();
+
+// Step 03 mock: toggle between onAir Global plan and the user's own eSIM
+document.querySelectorAll('[data-sim-mock]').forEach((m) => {
+  const btns = m.querySelectorAll('.sim-seg button');
+  const g = m.querySelector('.sim-global');
+  const o = m.querySelector('.sim-own');
+  btns.forEach((b) => b.addEventListener('click', () => {
+    btns.forEach((x) => x.classList.toggle('is-active', x === b));
+    g.hidden = b.dataset.sim !== 'global';
+    o.hidden = b.dataset.sim !== 'own';
+  }));
+});
