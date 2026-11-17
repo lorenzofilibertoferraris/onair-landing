@@ -122,11 +122,9 @@ const ONAIR_CONFIG = {
       const email = form.email.value.trim();
       err.hidden = true;
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Please enter a valid email address.'; err.hidden = false; return; }
-      let phone = form.phone ? form.phone.value.replace(/[\s().-]/g, '') : '';
-      if (phone && !/^\+[0-9]{7,15}$/.test(phone)) { err.textContent = 'Phone must be in international format, e.g. +1 555 000 1111 — or leave it empty.'; err.hidden = false; return; }
       btn.disabled = true; btn.textContent = 'Joining…';
       try {
-        await subscribe(email, wl.dataset.source, phone || undefined);
+        await subscribe(email, wl.dataset.source);
         localStorage.setItem('onair_wl_email', email);
         widgets.forEach(w => showStep2(w, email));
         if (window.fbq) fbq('track', 'Lead');
@@ -227,5 +225,45 @@ document.querySelectorAll('[data-sim-mock]').forEach((m) => {
     wl.classList.remove('is-collapsed');
     const inp = wl.querySelector('.wl-input');
     if (inp) inp.focus();
+  });
+})();
+
+
+// Step 2: optional phone for SMS updates (subscribes the saved email again
+// with phone_number, which adds SMS consent to the same profile)
+(() => {
+  document.querySelectorAll('[data-sms-form]').forEach((f) => {
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const wl = f.closest('[data-waitlist]');
+      let saved = null;
+      try { saved = localStorage.getItem('onair_wl_email'); } catch (x) {}
+      if (!saved) return;
+      const phone = f.phone.value.replace(/[\s().-]/g, '');
+      if (!/^\+[0-9]{7,15}$/.test(phone)) {
+        f.phone.setCustomValidity('International format, e.g. +1 555 000 1111');
+        f.phone.reportValidity();
+        return;
+      }
+      const btn = f.querySelector('.wl-sms-add');
+      btn.disabled = true;
+      try {
+        await (async () => {
+          const res = await fetch(`https://a.klaviyo.com/client/subscriptions?company_id=${ONAIR_CONFIG.klaviyoPublicKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/vnd.api+json', revision: '2024-10-15' },
+            body: JSON.stringify({ data: { type: 'subscription', attributes: {
+              custom_source: 'onAir 5G waitlist · sms-add',
+              profile: { data: { type: 'profile', attributes: { email: saved, phone_number: phone } } },
+            }, relationships: { list: { data: { type: 'list', id: ONAIR_CONFIG.klaviyoListId } } } } }),
+          });
+          if (!res.ok) throw new Error('sms add failed');
+        })();
+        wl.querySelectorAll('[data-sms-form]').forEach((x) => { x.hidden = true; });
+        wl.querySelectorAll('.wl-sms-ok').forEach((x) => { x.hidden = false; });
+      } catch (x) {
+        btn.disabled = false;
+      }
+    });
   });
 })();

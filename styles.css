@@ -319,6 +319,13 @@ s { text-decoration-thickness: 1.5px; }
 .wl-ok { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
 .wl-step2-copy { font-size: 14px; line-height: 1.55; color: rgba(45,41,38,.75); }
 .wl-pay { width: 100%; }
+.wl-sms { display: flex; gap: 8px; width: 100%; margin-top: 4px; }
+.wl-sms .wl-input { min-height: 46px; font-size: 13px; }
+.wl-sms .wl-sms-add { min-height: 46px; padding: 0 20px; }
+.wl-hero .wl-sms .wl-input { background: rgba(255,255,255,.94); border-color: transparent; }
+.wl-hero .wl-sms .wl-sms-add { border-color: rgba(255,255,255,.6); color: #fff; }
+.wl-sms-ok { font-size: 13px; color: #1F7A43; }
+.wl-hero .wl-sms-ok { color: #9FE8BC; }
 .wl-later { font-size: 12px; color: rgba(45,41,38,.55); }
 .wl-legal { margin-top: 12px; font-size: 11px; line-height: 1.6; color: rgba(45,41,38,.55); }
 

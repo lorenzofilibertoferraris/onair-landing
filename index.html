@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261117s">
+  <link rel="stylesheet" href="styles.css?v=20261117t">
 </head>
 <body>
 
@@ -58,6 +58,12 @@
         <div class="wl-step2" hidden>
           <p class="wl-ok"><i class="dot"></i>You're on the list.</p>
           <a class="pill pill-cyan wl-pay" href="#" data-deposit-link>Pay the $20 deposit</a>
+            <form class="wl-sms" data-sms-form novalidate>
+              <label class="sr-only">Phone for SMS updates (optional)</label>
+              <input class="wl-input" type="tel" name="phone" placeholder="Phone — optional, SMS updates" autocomplete="tel">
+              <button class="pill pill-ghost wl-sms-add" type="submit">Add</button>
+            </form>
+            <p class="wl-sms-ok" hidden>✓ You'll also get SMS updates.</p>
         </div>
       </div>
       <p class="hero-price"><s>$300</s> <strong>$199</strong> for waitlist members · $20 deposit</p>
@@ -107,11 +113,9 @@
         </div>
         <!-- Waitlist form (step 1: email · step 2: $20 deposit). Logic and endpoints in main.js → ONAIR_CONFIG -->
         <div class="wl" data-waitlist data-source="product-hero">
-          <form class="wl-form stacked" novalidate>
+          <form class="wl-form" novalidate>
             <label class="sr-only" for="wl-email-top">Email</label>
             <input id="wl-email-top" class="wl-input" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-            <label class="sr-only" for="wl-phone-top">Phone (optional)</label>
-            <input id="wl-phone-top" class="wl-input" type="tel" name="phone" placeholder="Phone — optional, for SMS updates" autocomplete="tel">
             <button class="pill pill-cyan wl-submit" type="submit">Join the waitlist</button>
           </form>
           <p class="wl-error" role="alert" hidden></p>
@@ -119,6 +123,12 @@
             <p class="wl-ok"><i class="dot"></i>You're on the list.</p>
             <p class="wl-step2-copy">Lock in <strong>$199</strong> with a <strong>$20 deposit</strong>. It counts toward the price.</p>
             <a class="pill pill-cyan wl-pay" href="#" data-deposit-link>Pay the $20 deposit</a>
+            <form class="wl-sms" data-sms-form novalidate>
+              <label class="sr-only">Phone for SMS updates (optional)</label>
+              <input class="wl-input" type="tel" name="phone" placeholder="Phone — optional, SMS updates" autocomplete="tel">
+              <button class="pill pill-ghost wl-sms-add" type="submit">Add</button>
+            </form>
+            <p class="wl-sms-ok" hidden>✓ You'll also get SMS updates.</p>
           </div>
           <p class="wl-legal">Free to join. Save $101 vs the $300 retail price. <a class="text-link" href="#waitlist">How the deposit works</a></p>
         </div>
@@ -390,8 +400,6 @@
         <form class="wl-form stacked" novalidate>
           <label class="sr-only" for="wl-email-main">Email</label>
           <input id="wl-email-main" class="wl-input" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-            <label class="sr-only" for="wl-phone-main">Phone (optional)</label>
-            <input id="wl-phone-main" class="wl-input" type="tel" name="phone" placeholder="Phone — optional, for SMS updates" autocomplete="tel">
           <button class="pill pill-cyan wl-submit" type="submit">Join the waitlist</button>
         </form>
         <p class="wl-error" role="alert" hidden></p>
@@ -399,6 +407,12 @@
           <p class="wl-ok"><i class="dot"></i>You're on the list.</p>
           <p class="wl-step2-copy">Last step: pay the <strong>$20 deposit</strong> to lock in <strong>$199</strong>.</p>
           <a class="pill pill-cyan wl-pay" href="#" data-deposit-link>Pay the $20 deposit</a>
+            <form class="wl-sms" data-sms-form novalidate>
+              <label class="sr-only">Phone for SMS updates (optional)</label>
+              <input class="wl-input" type="tel" name="phone" placeholder="Phone — optional, SMS updates" autocomplete="tel">
+              <button class="pill pill-ghost wl-sms-add" type="submit">Add</button>
+            </form>
+            <p class="wl-sms-ok" hidden>✓ You'll also get SMS updates.</p>
           <p class="wl-later">Not now? We'll email you the deposit link.</p>
         </div>
         <div class="wl-paid" hidden>
@@ -549,6 +563,6 @@
   <a class="pill pill-cyan" href="#waitlist" tabindex="-1">Reserve for $20</a>
 </div>
 
-<script src="main.js?v=20261117s"></script>
+<script src="main.js?v=20261117t"></script>
 </body>
 </html>
