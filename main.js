@@ -6,7 +6,7 @@ const ONAIR_CONFIG = {
   // a dedicated "onAir 5G Waitlist" list (TO CREATE). While listId is empty the form
   // runs in DRAFT mode: no data is sent anywhere, it just shows step 2.
   klaviyoPublicKey: 'RpgkGY',
-  klaviyoListId: '',
+  klaviyoListId: 'TsNfB4',
   // $20 deposit checkout (Stripe Payment Link or Shopify deposit product URL).
   // Leave empty while it does not exist: the button is shown as a placeholder.
   // For Stripe Payment Links the email is prefilled via ?prefilled_email=.
