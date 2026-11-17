@@ -336,7 +336,7 @@ s { text-decoration-thickness: 1.5px; }
 .dep-steps .num { font-family: var(--serif); font-size: 1.12rem; color: rgba(45,41,38,.3); }
 .dep-t { font-weight: 600; font-size: 1.2rem; line-height: 1.2; letter-spacing: -.01em; }
 .dep-steps li p:not(.dep-t) { margin-top: 4px; font-size: 14px; line-height: 1.5; color: rgba(45,41,38,.68); }
-.wl-img { margin-top: 36px; width: 100%; border-radius: var(--r-card); }
+.wl-img { margin-top: 22px; width: 100%; border-radius: var(--r-chip); }
 .waitlist-card { position: sticky; top: 96px; padding: clamp(24px, 3vw, 40px); border-radius: var(--r-card); background: #fff; box-shadow: 0 24px 60px rgba(45,41,38,.12); }
 .waitlist-card-title { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .2em; color: rgba(45,41,38,.55); }
 .wl-assure { list-style: none; display: grid; gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(45,41,38,.1); font-size: 13px; color: rgba(45,41,38,.75); }
