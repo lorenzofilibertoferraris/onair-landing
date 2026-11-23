@@ -72,7 +72,7 @@ body.hide-todo .draft-banner { display: none; }
 .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 28px; border-radius: var(--r-btn); font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease); }
 .pill:hover { transform: translateY(-1px); }
 .pill:focus-visible { outline: 2px solid var(--arancio-text); outline-offset: 2px; }
-.pill-cyan  { background: var(--arancio); color: #141619; box-shadow: 0 1px 2px rgba(38,40,45,.16), 0 3px 12px rgba(248,122,31,.22); }
+.pill-cyan  { background: var(--arancio); color: #fff; box-shadow: 0 1px 2px rgba(38,40,45,.16), 0 3px 12px rgba(248,122,31,.22); }
 .pill-cyan:hover { background: var(--arancio-hover); }
 .pill-ghost { background: transparent; color: var(--antracite); border: 1.5px solid rgba(38,40,45,.3); }
 .pill-ghost:hover { border-color: var(--antracite); background: rgba(38,40,45,.05); }
@@ -231,7 +231,7 @@ body.hide-todo .draft-banner { display: none; }
 .sim-amount span { font-size: 10.5px; font-weight: 500; color: rgba(38,40,45,.5); }
 .sim-bar { margin-top: 8px; height: 5px; border-radius: 99px; background: rgba(38,40,45,.1); overflow: hidden; }
 .sim-bar i { display: block; height: 100%; background: var(--arancio); border-radius: 99px; }
-.sim-topup { display: inline-block; margin-top: 12px; background: var(--arancio); color: #141619; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 8px 14px; border-radius: 7px; }
+.sim-topup { display: inline-block; margin-top: 12px; background: var(--arancio); color: #fff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 8px 14px; border-radius: 7px; }
 .sim-own-title { font-size: 14px; font-weight: 700; }
 .sim-own-sub { margin-top: 6px; font-size: 11px; line-height: 1.55; color: rgba(38,40,45,.6); }
 .steps h3 { font-family: var(--serif); font-weight: 700; text-transform: uppercase; font-size: clamp(1.1rem, 2.4vw, 1.5rem); line-height: 1.05; letter-spacing: -.01em; }
