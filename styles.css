@@ -408,3 +408,22 @@ body:has(.offer-bar.is-on) .draft-banner { bottom: 80px; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
 }
+
+/* ---------- legal pages (privacy.html / terms.html) ---------- */
+.legal-body { background: var(--panna); }
+.legal-nav { position: static; padding-block: 18px; }
+.legal { max-width: 760px; padding-block: clamp(40px, 7vw, 72px) clamp(56px, 8vw, 96px); }
+.legal .display-m { margin-top: 14px; }
+.legal-updated { margin-top: 10px; font-size: 12.5px; color: rgba(38,40,45,.55); }
+.legal h2 { font-family: var(--serif); font-weight: 700; text-transform: uppercase; font-size: 1.05rem; letter-spacing: .02em; margin: 38px 0 12px; }
+.legal p, .legal li { font-size: 14px; line-height: 1.75; color: rgba(38,40,45,.78); }
+.legal ul { padding-left: 20px; display: grid; gap: 8px; }
+.legal a { color: var(--arancio-text); border-bottom: 1px solid currentColor; }
+.legal a.pill { border-bottom: 0; color: #fff; }
+.legal-back { margin-top: 44px; }
+.legal-footer { padding-top: 0; }
+.legal-footer .footer-bottom { margin-top: 0; border-top: 0; }
+.legal-footer a { color: inherit; }
+/* TCPA microcopy under the optional phone field */
+.wl-sms-legal { margin-top: 8px; font-size: 10.5px; line-height: 1.55; color: rgba(38,40,45,.5); }
+.wl-hero .wl-sms-legal { color: rgba(255,255,255,.6); }
